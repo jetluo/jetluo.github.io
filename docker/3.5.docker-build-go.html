@@ -121,7 +121,7 @@ function sidebar_toggle() {
           
 <article id="page">
   <h1></h1>
-  <h1>3.5.go应用构建</h1>
+  <!-- <h1>3.5.go应用构建</h1>
 <h3 id="准备工作，1-程序源码">准备工作，1.程序源码</h3>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">    &quot;fmt&quot;</span><br><span class="line">    &quot;log&quot;</span><br><span class="line">    &quot;net/http&quot;</span><br><span class="line">    &quot;time&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">func sayHello(w http.ResponseWriter, r *http.Request) &#123;</span><br><span class="line">      new :=time.Now()</span><br><span class="line">     fmt.Fprintf(w,new.Format(&quot;2006-01-02 15:04:05&quot;))    </span><br><span class="line">     fmt.Fprintf(w, &quot;欢迎参加docker培训&quot;)</span><br><span class="line">&#125;</span><br><span class="line">func main() &#123;</span><br><span class="line">    http.HandleFunc(&quot;/&quot;, sayHello)//注册URI路径</span><br><span class="line">    log.Println(&quot;【docker项目】服务启动成功 监听端口 80&quot;)</span><br><span class="line">    er := http.ListenAndServe(&quot;0.0.0.0:80&quot;, nil)</span><br><span class="line">    if er != nil &#123;</span><br><span class="line">        log.Fatal(&quot;ListenAndServe: &quot;, er)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h3 id="1-go-加入依赖库编译：">1.go 加入依赖库编译：</h3>
@@ -135,7 +135,7 @@ function sidebar_toggle() {
 <h3 id="5-访问：">5.访问：</h3>
 <p><a target="_blank" rel="noopener" href="http://192.168.3.6:18070/">http://192.168.3.6:18070/</a><br>
 <img src="assets/3.5.docker-build-go-cab4c619.png" alt=""></p>
-
+ -->
 </article>
 
 <div id="paginator">

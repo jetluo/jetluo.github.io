@@ -121,7 +121,7 @@ function sidebar_toggle() {
           
 <article id="page">
   <h1></h1>
-  <h1>3.在k8s持久化存储</h1>
+  <!-- <h1>3.在k8s持久化存储</h1>
 <ul>
 <li>pv和pvc和sc的生命周期<br>
 <img src="assets/3.storage-in-k8s-2397258e.png" alt=""></li>
@@ -141,7 +141,7 @@ function sidebar_toggle() {
 <li>另外一种提供存储资源的方式， 提供更多的层级选型， 如iops等参数。 但是具体的参数与提供方是绑定的。 如aws和gce它们提供的storageclass的参数可选项是有不同的。</li>
 </ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">apiVersion: storage.k8s.io/v1</span><br><span class="line">kind: StorageClass</span><br><span class="line">metadata:</span><br><span class="line">  name: managed-nfs-storage</span><br><span class="line">parameters:</span><br><span class="line">  archiveOnDelete: &quot;false&quot;</span><br><span class="line">provisioner: fuseim.pri/ifs</span><br><span class="line">reclaimPolicy: Delete</span><br><span class="line">volumeBindingMode: Immediate</span><br></pre></td></tr></table></figure>
-
+ -->
 </article>
 
 <div id="paginator">
