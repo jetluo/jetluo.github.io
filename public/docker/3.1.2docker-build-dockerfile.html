@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+    
+      <link rel="icon" href="/favicon.png" />
+    
+
+    <title>
+        
+          winter is coming ...
+        
+    </title>
+
+    <!-- Spectre.css framework -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-icons.min.css">
+
+    <!-- theme css & js -->
+    
+<link rel="stylesheet" href="/css/book.css">
+
+    
+<script src="/js/book.js"></script>
+
+
+    <!-- tocbot -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+    
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zooming/2.1.1/zooming.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const zooming = new Zooming()
+    zooming.listen('.book-content img')
+})
+</script>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+
+<div class="book-container">
+  <div class="book-sidebar">
+    <div class="book-brand">
+  <a href="/">
+    <img src="/favicon.png">
+    <span>WINTER IS COMING ...</span>
+  </a>
+</div>
+    <div id="menu" class="book-menu hide">
+  <h1>Docker</h1>
+<ul>
+<li><a href="/docker/0-docker%E4%BB%8B%E7%BB%8D">Menu Realtime Demo</a></li>
+</ul>
+<h2 id="Render">Render</h2>
+<ul>
+<li><a href="/docker/My-New-Post">dockerinaction Demo</a></li>
+<li><a href="/docker/1.ccs-in-k8s">1.ccs-in-k8s</a></li>
+<li></li>
+</ul>
+<h2 id="Lorem-Ipsum">Lorem Ipsum</h2>
+<ul>
+<li><a href="/My-New-Post">English</a></li>
+</ul>
+
+</div>
+
+
+<script src="/js/book-menu.js"></script>
+
+  </div>
+
+  <div class="sidebar-toggle" onclick="sidebar_toggle()" onmouseover="add_inner()" onmouseleave="remove_inner()">
+  <div class="sidebar-toggle-inner"></div>
+</div>
+
+<script>
+function add_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.add('show')  
+}
+
+function remove_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.remove('show')
+}
+
+function sidebar_toggle() {
+    let sidebar_toggle = document.querySelector('.sidebar-toggle')
+    let sidebar = document.querySelector('.book-sidebar')
+    let content = document.querySelector('.off-canvas-content')
+    if (sidebar_toggle.classList.contains('extend')) { // show
+        sidebar_toggle.classList.remove('extend')
+        sidebar.classList.remove('hide')
+        content.classList.remove('extend')
+    }
+    else { // hide
+        sidebar_toggle.classList.add('extend')
+        sidebar.classList.add('hide')
+        content.classList.add('extend')
+    }
+}
+</script>
+
+  <div class="off-canvas-content">
+    <div class="columns">
+      <div class="column col-10 col-lg-12">
+        <div class="book-navbar">
+          <!-- For Responsive Layout -->
+
+<header class="navbar">
+  <section class="navbar-section">
+    <a onclick="open_sidebar()">
+      <i class="icon icon-menu"></i>
+    </a>
+  </section>
+</header>
+
+        </div>
+        <div class="book-content">
+          
+<article id="page">
+  <h1></h1>
+  <h1>3.1.2 场景二、Dockerfile构建</h1>
+<h3 id="1-dockerfile语法：">1.dockerfile语法：</h3>
+<p><img src="assets/3.1.docker-build-dockerfile-5738e6c7.png" alt=""><br>
+参考：<a target="_blank" rel="noopener" href="https://db2go.net/k8s/docker/3-dockerfile%E4%BB%8B%E7%BB%8D.html">https://db2go.net/k8s/docker/3-dockerfile介绍.html</a></p>
+<h3 id="2-编写镜像文件Dockerfile步骤图：">2.编写镜像文件Dockerfile步骤图：</h3>
+<p><img src="assets/3.1.2docker-build-dockerfile-0159e81f.png" alt=""></p>
+<h3 id="3-构建镜像文件Dockerfile：">3.构建镜像文件Dockerfile：</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">构建命令： docker build -t eureka:jre8-v1.0  .</span><br><span class="line"></span><br><span class="line">Sending build context to Docker daemon  42.91MB</span><br><span class="line">Step 1/6 : FROM openjdk:8-jre-alpine</span><br><span class="line"><span class="meta"> ---&gt;</span><span class="bash"> f7a292bbb70c</span></span><br><span class="line">Step 2/6 : MAINTAINER xxx@sgcc.com.cn</span><br><span class="line"><span class="meta"> ---&gt;</span><span class="bash"> Using cache</span></span><br><span class="line"><span class="meta"> ---&gt;</span><span class="bash"> 8c3ba67a2209</span></span><br><span class="line">Step 3/6 : COPY eureka.jar /opt/eureka.jar</span><br><span class="line"><span class="meta"> ---&gt;</span><span class="bash"> Using cache</span></span><br><span class="line"><span class="meta"> ---&gt;</span><span class="bash"> 316ca7606ca5</span></span><br><span class="line">Step 4/6 : WORKDIR /opt</span><br><span class="line"><span class="meta"> ---&gt;</span><span class="bash"> Using cache</span></span><br><span class="line"><span class="meta"> ---&gt;</span><span class="bash"> b8940ce2741e</span></span><br><span class="line">Step 5/6 : EXPOSE 8761</span><br><span class="line"><span class="meta"> ---&gt;</span><span class="bash"> Using cache</span></span><br><span class="line"><span class="meta"> ---&gt;</span><span class="bash"> b67b2687a83f</span></span><br><span class="line">Step 6/6 : CMD java $JAVA_OPTIONS -jar eureka.jar</span><br><span class="line"><span class="meta"> ---&gt;</span><span class="bash"> Using cache</span></span><br><span class="line"><span class="meta"> ---&gt;</span><span class="bash"> ea902f82499a</span></span><br><span class="line">Successfully built ea902f82499a</span><br><span class="line">Successfully tagged eureka:jre8-v1.0</span><br></pre></td></tr></table></figure>
+<h3 id="4-查找并运行镜像：">4.查找并运行镜像：</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker images|grep eureka</span><br><span class="line">docker run -d -e JAVA_OPTIONS=&#x27;-Xmx512M -Xms512M&#x27; hub.aosccs.com.cn:8888/test1/docker-acloud-bc-eureka-demo:1.5.0-SNAPSHOT </span><br></pre></td></tr></table></figure>
+<p><img src="assets/3.1.docker-build-dockerfile-d866744b.png" alt=""></p>
+<ul>
+<li>docker ps|grep eureka 查询运行到容器<br>
+<img src="assets/3.1.docker-build-dockerfile-51113ade.png" alt=""></li>
+</ul>
+
+</article>
+
+<div id="paginator">
+  
+</div>
+
+          <div class="book-post">
+  <h1>3.1.2 场景二、Dockerfile构建</h1>
+<h3 id="1-dockerfile语法：">1.dockerfile语法：</h3>
+<p><img src="assets/3.1.docker-build-dockerfile-5738e6c7.png" alt=""><br>
+参考：<a target="_blank" rel="noopener" href="https://db2go.net/k8s/docker/3-dockerfile%E4%BB%8B%E7%BB%8D.html">https://db2go.net/k8s/docker/3-dockerfile介绍.html</a></p>
+<h3 id="2-编写镜像文件Dockerfile步骤图：">2.编写镜像文件Dockerfile步骤图：</h3>
+<p><img src="assets/3.1.2docker-build-dockerfile-0159e81f.png" alt=""></p>
+<h3 id="3-构建镜像文件Dockerfile：">3.构建镜像文件Dockerfile：</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">构建命令： docker build -t eureka:jre8-v1.0  .</span><br><span class="line"></span><br><span class="line">Sending build context to Docker daemon  42.91MB</span><br><span class="line">Step 1/6 : FROM openjdk:8-jre-alpine</span><br><span class="line"><span class="meta"> ---&gt;</span><span class="bash"> f7a292bbb70c</span></span><br><span class="line">Step 2/6 : MAINTAINER xxx@sgcc.com.cn</span><br><span class="line"><span class="meta"> ---&gt;</span><span class="bash"> Using cache</span></span><br><span class="line"><span class="meta"> ---&gt;</span><span class="bash"> 8c3ba67a2209</span></span><br><span class="line">Step 3/6 : COPY eureka.jar /opt/eureka.jar</span><br><span class="line"><span class="meta"> ---&gt;</span><span class="bash"> Using cache</span></span><br><span class="line"><span class="meta"> ---&gt;</span><span class="bash"> 316ca7606ca5</span></span><br><span class="line">Step 4/6 : WORKDIR /opt</span><br><span class="line"><span class="meta"> ---&gt;</span><span class="bash"> Using cache</span></span><br><span class="line"><span class="meta"> ---&gt;</span><span class="bash"> b8940ce2741e</span></span><br><span class="line">Step 5/6 : EXPOSE 8761</span><br><span class="line"><span class="meta"> ---&gt;</span><span class="bash"> Using cache</span></span><br><span class="line"><span class="meta"> ---&gt;</span><span class="bash"> b67b2687a83f</span></span><br><span class="line">Step 6/6 : CMD java $JAVA_OPTIONS -jar eureka.jar</span><br><span class="line"><span class="meta"> ---&gt;</span><span class="bash"> Using cache</span></span><br><span class="line"><span class="meta"> ---&gt;</span><span class="bash"> ea902f82499a</span></span><br><span class="line">Successfully built ea902f82499a</span><br><span class="line">Successfully tagged eureka:jre8-v1.0</span><br></pre></td></tr></table></figure>
+<h3 id="4-查找并运行镜像：">4.查找并运行镜像：</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker images|grep eureka</span><br><span class="line">docker run -d -e JAVA_OPTIONS=&#x27;-Xmx512M -Xms512M&#x27; hub.aosccs.com.cn:8888/test1/docker-acloud-bc-eureka-demo:1.5.0-SNAPSHOT </span><br></pre></td></tr></table></figure>
+<p><img src="assets/3.1.docker-build-dockerfile-d866744b.png" alt=""></p>
+<ul>
+<li>docker ps|grep eureka 查询运行到容器<br>
+<img src="assets/3.1.docker-build-dockerfile-51113ade.png" alt=""></li>
+</ul>
+
+</div>
+
+
+  <div class="book-comments">
+    
+
+
+
+
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <div id="gitalk-container"></div>
+    <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: 'e25f2031c76f1ce6f918',
+          clientSecret: 'a52897f76824399457477bcb74f3618676ead1f0',
+          repo: 'blog-comments',
+          owner: 'jetluo',
+          admin: ['jetluo'],
+          id: location.pathname,
+          distractionFreeMode: 'false'
+        })
+        gitalk.render('gitalk-container')
+    </script>
+
+  </div>
+
+
+
+<script src="/js/book-post.js"></script>
+
+        </div>
+        
+      </div>
+      <div class="column col-2 hide-lg">
+        <div class="book-post-info">
+  
+    <div class="book-post-meta">
+
+  <div class="author">
+
+    <!-- Author image -->
+    <div class="author-img">
+      
+        <figure
+          class="avatar avatar-lg"
+          data-initial="J"
+          style="background-color: #3b4351;">
+        </figure>
+      
+    </div>
+
+    <!-- Author title -->
+    <div class="author-title">
+      <div>Jet</div>
+      <div>2021-07-17</div>
+    </div>
+  </div>
+
+  
+
+  <div class="divider"></div>
+</div>
+  
+
+  <div class="book-tocbot">
+</div>
+<div class="book-tocbot-menu">
+  <a class="book-toc-expand" onclick="expand_toc()">Expand all</a>
+  <a onclick="go_top()">Back to top</a>
+  <a onclick="go_bottom()">Go to bottom</a>
+</div>
+
+
+<script src="/js/book-toc.js"></script>
+
+</div>
+      </div>
+    </div>
+  </div>
+  
+  <a class="off-canvas-overlay" onclick="hide_canvas()"></a>
+</div>
+
+</body>
+</html>
+
+
+<script src="/js/book.js"></script>

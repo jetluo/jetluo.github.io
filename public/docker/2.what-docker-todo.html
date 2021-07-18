@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+    
+      <link rel="icon" href="/favicon.png" />
+    
+
+    <title>
+        
+          winter is coming ...
+        
+    </title>
+
+    <!-- Spectre.css framework -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-icons.min.css">
+
+    <!-- theme css & js -->
+    
+<link rel="stylesheet" href="/css/book.css">
+
+    
+<script src="/js/book.js"></script>
+
+
+    <!-- tocbot -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+    
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zooming/2.1.1/zooming.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const zooming = new Zooming()
+    zooming.listen('.book-content img')
+})
+</script>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+
+<div class="book-container">
+  <div class="book-sidebar">
+    <div class="book-brand">
+  <a href="/">
+    <img src="/favicon.png">
+    <span>WINTER IS COMING ...</span>
+  </a>
+</div>
+    <div id="menu" class="book-menu hide">
+  <h1>Docker</h1>
+<ul>
+<li><a href="/docker/0-docker%E4%BB%8B%E7%BB%8D">Menu Realtime Demo</a></li>
+</ul>
+<h2 id="Render">Render</h2>
+<ul>
+<li><a href="/docker/My-New-Post">dockerinaction Demo</a></li>
+<li><a href="/docker/1.ccs-in-k8s">1.ccs-in-k8s</a></li>
+<li></li>
+</ul>
+<h2 id="Lorem-Ipsum">Lorem Ipsum</h2>
+<ul>
+<li><a href="/My-New-Post">English</a></li>
+</ul>
+
+</div>
+
+
+<script src="/js/book-menu.js"></script>
+
+  </div>
+
+  <div class="sidebar-toggle" onclick="sidebar_toggle()" onmouseover="add_inner()" onmouseleave="remove_inner()">
+  <div class="sidebar-toggle-inner"></div>
+</div>
+
+<script>
+function add_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.add('show')  
+}
+
+function remove_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.remove('show')
+}
+
+function sidebar_toggle() {
+    let sidebar_toggle = document.querySelector('.sidebar-toggle')
+    let sidebar = document.querySelector('.book-sidebar')
+    let content = document.querySelector('.off-canvas-content')
+    if (sidebar_toggle.classList.contains('extend')) { // show
+        sidebar_toggle.classList.remove('extend')
+        sidebar.classList.remove('hide')
+        content.classList.remove('extend')
+    }
+    else { // hide
+        sidebar_toggle.classList.add('extend')
+        sidebar.classList.add('hide')
+        content.classList.add('extend')
+    }
+}
+</script>
+
+  <div class="off-canvas-content">
+    <div class="columns">
+      <div class="column col-10 col-lg-12">
+        <div class="book-navbar">
+          <!-- For Responsive Layout -->
+
+<header class="navbar">
+  <section class="navbar-section">
+    <a onclick="open_sidebar()">
+      <i class="icon icon-menu"></i>
+    </a>
+  </section>
+</header>
+
+        </div>
+        <div class="book-content">
+          
+<article id="page">
+  <h1></h1>
+  <h1>2.Docker底层原理</h1>
+<h2 id="1-Docker容器的启动过程：">1. Docker容器的启动过程：</h2>
+<ul>
+<li>容器的启动命令：<br>
+docker run -i -t ubuntu /bin/bash<br>
+<img src="assets/2.what-docker-todo-860e7fc0.png" alt=""></li>
+</ul>
+<ol>
+<li>docker client(即：docker终端命令行)会调用docker daemon请求启动一个容器，</li>
+<li>docker daemon会向host os(即：linux)请求创建容器</li>
+<li>linux会创建一个空的容器（可以简单理解为：一个未安装操作系统的裸机，只有虚拟出来的CPU、内存等硬件资源）</li>
+<li>docker daemon请检查本机是否存在docker镜像文件（可以简单理解为操作系统安装光盘），如果有，则加载到容器中（即：光盘插入裸机，准备安装操作系统）</li>
+<li>将镜像文件加载到容器中（即：裸机上安装好了操作系统，不再是裸机状态）</li>
+</ol>
+<h2 id="2-Docker的核心技术：">2. Docker的核心技术：</h2>
+<p>Docker容器本质上是属主机上的进程。Docker通过namespace实现了资源隔离，通过cgroups实现了资源限制，通过写时复制机制（copy-on-write）实现了高效的文件操作。</p>
+<ul>
+<li>namespace 是 Linux 为我们提供的用于分离进程树、网络接口、挂载点以及进程间通信等资源的方法。Linux内核提供了下面6种namespace隔离的系统调用。目的就是实现轻量级虚拟化（容器）服务。在同一个namespace下的进程可以感知彼此，而对外界的进程一无所知。以达到独立和隔离的目的。<br>
+<img src="assets/2.what-docker-todo-372ee802.png" alt=""><br>
+参考：<a target="_blank" rel="noopener" href="http://dockone.io/article/2941">http://dockone.io/article/2941</a></li>
+<li>cgroups资源限制，四大功能<br>
+资源限制：可以对任务使用的资源总额进行限制<br>
+　优先级分配：通过分配的cpu时间片数量以及磁盘IO带宽大小，实际上相当于控制了任务运行优先级<br>
+　资源统计：可以统计系统的资源使用量，如cpu时长，内存用量等<br>
+　任务控制：cgroup可以对任务执行挂起、恢复等操作</li>
+</ul>
+<h2 id="3-容器化思维：">3. 容器化思维：</h2>
+<h6 id="我如何进行容器调试，该怎么办？">我如何进行容器调试，该怎么办？</h6>
+<h6 id="sshd要怎么配置？">sshd要怎么配置？</h6>
+<h6 id="容器如何做备份？">容器如何做备份？</h6>
+<ul>
+<li>SSH服务器的替代方案<br>
+首先Docker不是一个轻量级虚拟机技术，他实际上是一个进程，所以不需要考虑ssh服务器，也就不需要配置。在容器里，提供 docker exec命令， 可以进入已经运行的容器，在里面执行命令。</li>
+<li>如果说要长期使用的配置文件，就做到镜像中，如果是经常修改的配置文件，就需要用到docker数据卷共享这个配置文件。</li>
+</ul>
+
+</article>
+
+<div id="paginator">
+  
+</div>
+
+          <div class="book-post">
+  <h1>2.Docker底层原理</h1>
+<h2 id="1-Docker容器的启动过程：">1. Docker容器的启动过程：</h2>
+<ul>
+<li>容器的启动命令：<br>
+docker run -i -t ubuntu /bin/bash<br>
+<img src="assets/2.what-docker-todo-860e7fc0.png" alt=""></li>
+</ul>
+<ol>
+<li>docker client(即：docker终端命令行)会调用docker daemon请求启动一个容器，</li>
+<li>docker daemon会向host os(即：linux)请求创建容器</li>
+<li>linux会创建一个空的容器（可以简单理解为：一个未安装操作系统的裸机，只有虚拟出来的CPU、内存等硬件资源）</li>
+<li>docker daemon请检查本机是否存在docker镜像文件（可以简单理解为操作系统安装光盘），如果有，则加载到容器中（即：光盘插入裸机，准备安装操作系统）</li>
+<li>将镜像文件加载到容器中（即：裸机上安装好了操作系统，不再是裸机状态）</li>
+</ol>
+<h2 id="2-Docker的核心技术：">2. Docker的核心技术：</h2>
+<p>Docker容器本质上是属主机上的进程。Docker通过namespace实现了资源隔离，通过cgroups实现了资源限制，通过写时复制机制（copy-on-write）实现了高效的文件操作。</p>
+<ul>
+<li>namespace 是 Linux 为我们提供的用于分离进程树、网络接口、挂载点以及进程间通信等资源的方法。Linux内核提供了下面6种namespace隔离的系统调用。目的就是实现轻量级虚拟化（容器）服务。在同一个namespace下的进程可以感知彼此，而对外界的进程一无所知。以达到独立和隔离的目的。<br>
+<img src="assets/2.what-docker-todo-372ee802.png" alt=""><br>
+参考：<a target="_blank" rel="noopener" href="http://dockone.io/article/2941">http://dockone.io/article/2941</a></li>
+<li>cgroups资源限制，四大功能<br>
+资源限制：可以对任务使用的资源总额进行限制<br>
+　优先级分配：通过分配的cpu时间片数量以及磁盘IO带宽大小，实际上相当于控制了任务运行优先级<br>
+　资源统计：可以统计系统的资源使用量，如cpu时长，内存用量等<br>
+　任务控制：cgroup可以对任务执行挂起、恢复等操作</li>
+</ul>
+<h2 id="3-容器化思维：">3. 容器化思维：</h2>
+<h6 id="我如何进行容器调试，该怎么办？">我如何进行容器调试，该怎么办？</h6>
+<h6 id="sshd要怎么配置？">sshd要怎么配置？</h6>
+<h6 id="容器如何做备份？">容器如何做备份？</h6>
+<ul>
+<li>SSH服务器的替代方案<br>
+首先Docker不是一个轻量级虚拟机技术，他实际上是一个进程，所以不需要考虑ssh服务器，也就不需要配置。在容器里，提供 docker exec命令， 可以进入已经运行的容器，在里面执行命令。</li>
+<li>如果说要长期使用的配置文件，就做到镜像中，如果是经常修改的配置文件，就需要用到docker数据卷共享这个配置文件。</li>
+</ul>
+
+</div>
+
+
+  <div class="book-comments">
+    
+
+
+
+
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <div id="gitalk-container"></div>
+    <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: 'e25f2031c76f1ce6f918',
+          clientSecret: 'a52897f76824399457477bcb74f3618676ead1f0',
+          repo: 'blog-comments',
+          owner: 'jetluo',
+          admin: ['jetluo'],
+          id: location.pathname,
+          distractionFreeMode: 'false'
+        })
+        gitalk.render('gitalk-container')
+    </script>
+
+  </div>
+
+
+
+<script src="/js/book-post.js"></script>
+
+        </div>
+        
+      </div>
+      <div class="column col-2 hide-lg">
+        <div class="book-post-info">
+  
+    <div class="book-post-meta">
+
+  <div class="author">
+
+    <!-- Author image -->
+    <div class="author-img">
+      
+        <figure
+          class="avatar avatar-lg"
+          data-initial="J"
+          style="background-color: #3b4351;">
+        </figure>
+      
+    </div>
+
+    <!-- Author title -->
+    <div class="author-title">
+      <div>Jet</div>
+      <div>2021-07-17</div>
+    </div>
+  </div>
+
+  
+
+  <div class="divider"></div>
+</div>
+  
+
+  <div class="book-tocbot">
+</div>
+<div class="book-tocbot-menu">
+  <a class="book-toc-expand" onclick="expand_toc()">Expand all</a>
+  <a onclick="go_top()">Back to top</a>
+  <a onclick="go_bottom()">Go to bottom</a>
+</div>
+
+
+<script src="/js/book-toc.js"></script>
+
+</div>
+      </div>
+    </div>
+  </div>
+  
+  <a class="off-canvas-overlay" onclick="hide_canvas()"></a>
+</div>
+
+</body>
+</html>
+
+
+<script src="/js/book.js"></script>
