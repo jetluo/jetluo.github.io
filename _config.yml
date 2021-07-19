@@ -113,3 +113,8 @@ deploy:
   type: 'git'
   repo: https://github.com/jetluo/jetluo.github.io.git
   branch: gh-pages 
+
+#是否开启打赏功能
+donate: false
+#打赏文案
+donate_message: 欣赏此文？求鼓励，求支持！
