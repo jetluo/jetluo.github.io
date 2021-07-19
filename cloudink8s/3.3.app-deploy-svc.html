@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+    
+      <link rel="icon" href="/favicon.png" />
+    
+
+    <title>
+        
+          觉者，悟也
+        
+    </title>
+
+    <!-- Spectre.css framework -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-icons.min.css">
+
+    <!-- theme css & js -->
+    
+<link rel="stylesheet" href="/css/book.css">
+
+    
+<script src="/js/book.js"></script>
+
+
+    <!-- tocbot -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+    
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zooming/2.1.1/zooming.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const zooming = new Zooming()
+    zooming.listen('.book-content img')
+})
+</script>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+
+<div class="book-container">
+  <div class="book-sidebar">
+    <div class="book-brand">
+  <a href="/">
+    <img src="/favicon.png">
+    <span>觉者，悟也</span>
+  </a>
+</div>
+    <div id="menu" class="book-menu hide">
+  <h1>容器</h1>
+<ul>
+<li><a href="/docker/README">容器入门</a></li>
+<li><a href="/cloudink8s/README">容器高级</a></li>
+</ul>
+
+</div>
+
+
+<script src="/js/book-menu.js"></script>
+
+  </div>
+
+  <div class="sidebar-toggle" onclick="sidebar_toggle()" onmouseover="add_inner()" onmouseleave="remove_inner()">
+  <div class="sidebar-toggle-inner"></div>
+</div>
+
+<script>
+function add_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.add('show')  
+}
+
+function remove_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.remove('show')
+}
+
+function sidebar_toggle() {
+    let sidebar_toggle = document.querySelector('.sidebar-toggle')
+    let sidebar = document.querySelector('.book-sidebar')
+    let content = document.querySelector('.off-canvas-content')
+    if (sidebar_toggle.classList.contains('extend')) { // show
+        sidebar_toggle.classList.remove('extend')
+        sidebar.classList.remove('hide')
+        content.classList.remove('extend')
+    }
+    else { // hide
+        sidebar_toggle.classList.add('extend')
+        sidebar.classList.add('hide')
+        content.classList.add('extend')
+    }
+}
+</script>
+
+  <div class="off-canvas-content">
+    <div class="columns">
+      <div class="column col-10 col-lg-12">
+        <div class="book-navbar">
+          <!-- For Responsive Layout -->
+
+<header class="navbar">
+  <section class="navbar-section">
+    <a onclick="open_sidebar()">
+      <i class="icon icon-menu"></i>
+    </a>
+  </section>
+</header>
+
+        </div>
+        <div class="book-content">
+          
+<article id="page">
+  <h1></h1>
+  <!-- <h1>访问方式</h1>
+<p>##3.3.1 能做什么<br>
+云容器引擎通过将Kubernetes网络和VPC的深度集成，提供了稳定高性能的容器网络。在容器服务中，支持以下类型的互联互通。</p>
+<ul>
+<li>集群内访问（ClusterIP）</li>
+<li>节点访问（NodePort）<br>
+节点访问 ( NodePort )是指在每个节点的IP上开放一个静态端口，通过静态端口对外暴露服务。</li>
+<li>负载均衡 ( LoadBalancer )<br>
+通过弹性负载均衡从公网访问工作负载，与弹性IP方式相比提供了高可靠的保障，一般用于系统中需要暴露到公网的服务。</li>
+<li>DNAT网关 ( DNAT )</li>
+</ul>
+<p>##3.3.2 创建无状态工作负载<br>
+<img src="assets/3.3.app-deploy-svc-be1b3956.png" alt=""></p>
+<ul>
+<li>添加Service<br>
+<img src="assets/3.3.app-deploy-svc-f7749987.png" alt=""></li>
+<li>添加Service<br>
+<img src="assets/3.3.app-deploy-svc-111f9d4e.png" alt=""></li>
+<li>选择节点端口<br>
+<img src="assets/3.3.app-deploy-svc-53c49e9e.png" alt=""></li>
+<li>服务清单<br>
+<img src="assets/3.3.app-deploy-svc-c0d39aad.png" alt=""></li>
+</ul>
+ -->
+</article>
+
+<div id="paginator">
+  
+</div>
+
+          <div class="book-post">
+  <h1>访问方式</h1>
+<p>##3.3.1 能做什么<br>
+云容器引擎通过将Kubernetes网络和VPC的深度集成，提供了稳定高性能的容器网络。在容器服务中，支持以下类型的互联互通。</p>
+<ul>
+<li>集群内访问（ClusterIP）</li>
+<li>节点访问（NodePort）<br>
+节点访问 ( NodePort )是指在每个节点的IP上开放一个静态端口，通过静态端口对外暴露服务。</li>
+<li>负载均衡 ( LoadBalancer )<br>
+通过弹性负载均衡从公网访问工作负载，与弹性IP方式相比提供了高可靠的保障，一般用于系统中需要暴露到公网的服务。</li>
+<li>DNAT网关 ( DNAT )</li>
+</ul>
+<p>##3.3.2 创建无状态工作负载<br>
+<img src="assets/3.3.app-deploy-svc-be1b3956.png" alt=""></p>
+<ul>
+<li>添加Service<br>
+<img src="assets/3.3.app-deploy-svc-f7749987.png" alt=""></li>
+<li>添加Service<br>
+<img src="assets/3.3.app-deploy-svc-111f9d4e.png" alt=""></li>
+<li>选择节点端口<br>
+<img src="assets/3.3.app-deploy-svc-53c49e9e.png" alt=""></li>
+<li>服务清单<br>
+<img src="assets/3.3.app-deploy-svc-c0d39aad.png" alt=""></li>
+</ul>
+
+</div>
+
+
+  <div class="book-comments">
+    
+
+
+
+
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <div id="gitalk-container"></div>
+    <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: 'e25f2031c76f1ce6f918',
+          clientSecret: '0a0b5004ad8f264bb4c22a86fdfc908008b71547',
+          repo: 'blog-comments',
+          owner: 'jetluo',
+          admin: ['jetluo'],
+          id: location.pathname,
+          distractionFreeMode: 'false'
+        })
+        gitalk.render('gitalk-container')
+    </script>
+
+  </div>
+
+
+
+<script src="/js/book-post.js"></script>
+
+        </div>
+        
+      </div>
+      <div class="column col-2 hide-lg">
+        <div class="book-post-info">
+  
+    <div class="book-post-meta">
+
+  <div class="author">
+
+    <!-- Author image -->
+    <div class="author-img">
+      
+        <figure
+          class="avatar avatar-lg"
+          data-initial="J"
+          style="background-color: #3b4351;">
+        </figure>
+      
+    </div>
+
+    <!-- Author title -->
+    <div class="author-title">
+      <div>Jet</div>
+      <div>2021-07-18</div>
+    </div>
+  </div>
+
+  
+
+  <div class="divider"></div>
+</div>
+  
+
+  <div class="book-tocbot">
+</div>
+<div class="book-tocbot-menu">
+  <a class="book-toc-expand" onclick="expand_toc()">Expand all</a>
+  <a onclick="go_top()">Back to top</a>
+  <a onclick="go_bottom()">Go to bottom</a>
+</div>
+
+
+<script src="/js/book-toc.js"></script>
+
+</div>
+      </div>
+    </div>
+  </div>
+  
+  <a class="off-canvas-overlay" onclick="hide_canvas()"></a>
+</div>
+
+</body>
+</html>
+
+
+<script src="/js/book.js"></script>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+    
+      <link rel="icon" href="/favicon.png" />
+    
+
+    <title>
+        
+          觉者，悟也
+        
+    </title>
+
+    <!-- Spectre.css framework -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-icons.min.css">
+
+    <!-- theme css & js -->
+    
+<link rel="stylesheet" href="/css/book.css">
+
+    
+<script src="/js/book.js"></script>
+
+
+    <!-- tocbot -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+    
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zooming/2.1.1/zooming.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const zooming = new Zooming()
+    zooming.listen('.book-content img')
+})
+</script>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+
+<div class="book-container">
+  <div class="book-sidebar">
+    <div class="book-brand">
+  <a href="/">
+    <img src="/favicon.png">
+    <span>觉者，悟也</span>
+  </a>
+</div>
+    <div id="menu" class="book-menu hide">
+  <h1>容器</h1>
+<ul>
+<li><a href="/docker/README">容器入门</a></li>
+<li><a href="/cloudink8s/README">容器高级</a></li>
+</ul>
+
+</div>
+
+
+<script src="/js/book-menu.js"></script>
+
+  </div>
+
+  <div class="sidebar-toggle" onclick="sidebar_toggle()" onmouseover="add_inner()" onmouseleave="remove_inner()">
+  <div class="sidebar-toggle-inner"></div>
+</div>
+
+<script>
+function add_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.add('show')  
+}
+
+function remove_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.remove('show')
+}
+
+function sidebar_toggle() {
+    let sidebar_toggle = document.querySelector('.sidebar-toggle')
+    let sidebar = document.querySelector('.book-sidebar')
+    let content = document.querySelector('.off-canvas-content')
+    if (sidebar_toggle.classList.contains('extend')) { // show
+        sidebar_toggle.classList.remove('extend')
+        sidebar.classList.remove('hide')
+        content.classList.remove('extend')
+    }
+    else { // hide
+        sidebar_toggle.classList.add('extend')
+        sidebar.classList.add('hide')
+        content.classList.add('extend')
+    }
+}
+</script>
+
+  <div class="off-canvas-content">
+    <div class="columns">
+      <div class="column col-10 col-lg-12">
+        <div class="book-navbar">
+          <!-- For Responsive Layout -->
+
+<header class="navbar">
+  <section class="navbar-section">
+    <a onclick="open_sidebar()">
+      <i class="icon icon-menu"></i>
+    </a>
+  </section>
+</header>
+
+        </div>
+        <div class="book-content">
+          
+<article id="page">
+  <h1></h1>
+  <!-- <h1>2.3.云容器引擎CCE（创建K8S集群）</h1>
+<h2 id="1-能做什么">1. 能做什么</h2>
+<ul>
+<li>云容器引擎（Cloud Container Engine，简称CCE）提供高度可扩展的、高性能的企业级Kubernetes集群，支持运行Docker容器。借助云容器引擎，您可以在华为云上轻松部署、管理和扩展容器化应用程序。</li>
+<li>云容器引擎提供了Kubernetes集群管理、容器应用全生命周期管理、应用服务网格、Helm应用模板、插件管理、应用调度、监控与运维等容器全栈能力。</li>
+</ul>
+<h2 id="2-架构图">2. 架构图</h2>
+<p><img src="assets/2.3.app-k8s-f55c87b6.png" alt=""></p>
+<h2 id="3-步骤">3. 步骤</h2>
+<ul>
+<li>进入云容器引擎，选择创建Kubernetes集群<br>
+<img src="assets/2.3.app-k8s-c9d7bd49.png" alt=""></li>
+<li>创建Kubernetes集群，选择k8s版本<br>
+<img src="assets/2.3.app-k8s-b51148d0.png" alt=""></li>
+<li>选择k8s节点配置<br>
+<img src="assets/2.3.app-k8s-3e1e6129.png" alt=""></li>
+<li>选择节点系统盘和数据盘配置<br>
+<img src="assets/2.3.app-k8s-1a543010.png" alt=""></li>
+<li>创建Kubernetes集群，执行状态<br>
+<img src="assets/2.3.app-k8s-8784bd4a.png" alt=""></li>
+<li>创建Kubernetes集群，执行状态<br>
+<img src="assets/2.3.app-k8s-7ab84881.png" alt=""></li>
+<li>集群管理，查看集群状态<br>
+<img src="assets/2.3.app-k8s-0f2a3a39.png" alt=""></li>
+</ul>
+ -->
+</article>
+
+<div id="paginator">
+  
+</div>
+
+          <div class="book-post">
+  <h1>2.3.云容器引擎CCE（创建K8S集群）</h1>
+<h2 id="1-能做什么">1. 能做什么</h2>
+<ul>
+<li>云容器引擎（Cloud Container Engine，简称CCE）提供高度可扩展的、高性能的企业级Kubernetes集群，支持运行Docker容器。借助云容器引擎，您可以在华为云上轻松部署、管理和扩展容器化应用程序。</li>
+<li>云容器引擎提供了Kubernetes集群管理、容器应用全生命周期管理、应用服务网格、Helm应用模板、插件管理、应用调度、监控与运维等容器全栈能力。</li>
+</ul>
+<h2 id="2-架构图">2. 架构图</h2>
+<p><img src="assets/2.3.app-k8s-f55c87b6.png" alt=""></p>
+<h2 id="3-步骤">3. 步骤</h2>
+<ul>
+<li>进入云容器引擎，选择创建Kubernetes集群<br>
+<img src="assets/2.3.app-k8s-c9d7bd49.png" alt=""></li>
+<li>创建Kubernetes集群，选择k8s版本<br>
+<img src="assets/2.3.app-k8s-b51148d0.png" alt=""></li>
+<li>选择k8s节点配置<br>
+<img src="assets/2.3.app-k8s-3e1e6129.png" alt=""></li>
+<li>选择节点系统盘和数据盘配置<br>
+<img src="assets/2.3.app-k8s-1a543010.png" alt=""></li>
+<li>创建Kubernetes集群，执行状态<br>
+<img src="assets/2.3.app-k8s-8784bd4a.png" alt=""></li>
+<li>创建Kubernetes集群，执行状态<br>
+<img src="assets/2.3.app-k8s-7ab84881.png" alt=""></li>
+<li>集群管理，查看集群状态<br>
+<img src="assets/2.3.app-k8s-0f2a3a39.png" alt=""></li>
+</ul>
+
+</div>
+
+
+  <div class="book-comments">
+    
+
+
+
+
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <div id="gitalk-container"></div>
+    <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: 'e25f2031c76f1ce6f918',
+          clientSecret: '0a0b5004ad8f264bb4c22a86fdfc908008b71547',
+          repo: 'blog-comments',
+          owner: 'jetluo',
+          admin: ['jetluo'],
+          id: location.pathname,
+          distractionFreeMode: 'false'
+        })
+        gitalk.render('gitalk-container')
+    </script>
+
+  </div>
+
+
+
+<script src="/js/book-post.js"></script>
+
+        </div>
+        
+      </div>
+      <div class="column col-2 hide-lg">
+        <div class="book-post-info">
+  
+    <div class="book-post-meta">
+
+  <div class="author">
+
+    <!-- Author image -->
+    <div class="author-img">
+      
+        <figure
+          class="avatar avatar-lg"
+          data-initial="J"
+          style="background-color: #3b4351;">
+        </figure>
+      
+    </div>
+
+    <!-- Author title -->
+    <div class="author-title">
+      <div>Jet</div>
+      <div>2021-07-18</div>
+    </div>
+  </div>
+
+  
+
+  <div class="divider"></div>
+</div>
+  
+
+  <div class="book-tocbot">
+</div>
+<div class="book-tocbot-menu">
+  <a class="book-toc-expand" onclick="expand_toc()">Expand all</a>
+  <a onclick="go_top()">Back to top</a>
+  <a onclick="go_bottom()">Go to bottom</a>
+</div>
+
+
+<script src="/js/book-toc.js"></script>
+
+</div>
+      </div>
+    </div>
+  </div>
+  
+  <a class="off-canvas-overlay" onclick="hide_canvas()"></a>
+</div>
+
+</body>
+</html>
+
+
+<script src="/js/book.js"></script>
