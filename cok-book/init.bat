@@ -1,0 +1,2 @@
+call  gitbook init
+pause

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+    
+      <link rel="icon" href="/favicon.png" />
+    
+
+    <title>
+        
+          觉者，悟也
+        
+    </title>
+
+    <!-- Spectre.css framework -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-icons.min.css">
+
+    <!-- theme css & js -->
+    
+<link rel="stylesheet" href="/css/book.css">
+
+    
+<script src="/js/book.js"></script>
+
+
+    <!-- tocbot -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+    
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zooming/2.1.1/zooming.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const zooming = new Zooming()
+    zooming.listen('.book-content img')
+})
+</script>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+
+<div class="book-container">
+  <div class="book-sidebar">
+    <div class="book-brand">
+  <a href="/">
+    <img src="/favicon.png">
+    <span>觉者，悟也</span>
+  </a>
+</div>
+    <div id="menu" class="book-menu hide">
+  <h2 id="容器技术专辑">容器技术专辑</h2>
+<ul>
+<li><a href="/docker/README">容器入门</a></li>
+<li><a href="/cloudink8s/README">容器中级</a></li>
+<li><a href="/cok-book/README">容器上云</a></li>
+</ul>
+
+</div>
+
+
+<script src="/js/book-menu.js"></script>
+
+  </div>
+
+  <div class="sidebar-toggle" onclick="sidebar_toggle()" onmouseover="add_inner()" onmouseleave="remove_inner()">
+  <div class="sidebar-toggle-inner"></div>
+</div>
+
+<script>
+function add_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.add('show')  
+}
+
+function remove_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.remove('show')
+}
+
+function sidebar_toggle() {
+    let sidebar_toggle = document.querySelector('.sidebar-toggle')
+    let sidebar = document.querySelector('.book-sidebar')
+    let content = document.querySelector('.off-canvas-content')
+    if (sidebar_toggle.classList.contains('extend')) { // show
+        sidebar_toggle.classList.remove('extend')
+        sidebar.classList.remove('hide')
+        content.classList.remove('extend')
+    }
+    else { // hide
+        sidebar_toggle.classList.add('extend')
+        sidebar.classList.add('hide')
+        content.classList.add('extend')
+    }
+}
+</script>
+
+  <div class="off-canvas-content">
+    <div class="columns">
+      <div class="column col-10 col-lg-12">
+        <div class="book-navbar">
+          <!-- For Responsive Layout -->
+
+<header class="navbar">
+  <section class="navbar-section">
+    <a onclick="open_sidebar()">
+      <i class="icon icon-menu"></i>
+    </a>
+  </section>
+</header>
+
+        </div>
+        <div class="book-content">
+          
+<article id="page">
+  <h1></h1>
+  <!-- <h1>SVN下载MAVEN项目代码并打包部署</h1>
+<h2 id="1-创建Maven打包并构建镜像部署K8S任务">1. 创建Maven打包并构建镜像部署K8S任务</h2>
+<p><img src="image/20200526_113209_24.png" alt="20200526_113209_24"></p>
+<h3 id="配置任务参数">配置任务参数</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">svn： https://192.168.0.29:8443/svn/200103/trunk/05.Code/cok/cok-war</span><br><span class="line">dockerfile： Dockerfile</span><br><span class="line">监控检查端口： 8080</span><br><span class="line">文件挂载： /usr/local/tomcat/webapps/ROOT/WEB-INF/classes/prop/jdbc.properties maven-war-jdbc.properties</span><br><span class="line">JAVA_OPTS: -Xmx512M -Xms512M -XX:MetaspaceSize=64m -XX:MaxMetaspaceSize=128m -agentlib:jdwp=transport=dt_socket,address=9080,server=y,suspend=n</span><br><span class="line">服务1： 8080 8080 18080 test.maven.war.com</span><br><span class="line">服务2： 9080 9080 18090</span><br></pre></td></tr></table></figure>
+<p><img src="image/20200526_115027_41.png" alt="20200526_115027_41"><br>
+<img src="image/20200527_180137_85.png" alt="20200527_180137_85"></p>
+<ul>
+<li>其中<code>maven-war-jdbc.properties</code>的内容：</li>
+</ul>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#mysql</span></span><br><span class="line"><span class="meta">hibernate.dialect</span>=<span class="string">org.hibernate.dialect.MySQLDialect</span></span><br><span class="line"><span class="meta">hibernate.connection.url</span>=<span class="string">jdbc:mysql://mysql:3306/mysql?characterEncoding=utf8&amp;useSSL=false&amp;allowMultiQueries=true</span></span><br><span class="line"><span class="meta">hibernate.connection.driver_class</span>=<span class="string">com.mysql.jdbc.Driver</span></span><br><span class="line"><span class="meta">hibernate.connection.username</span>=<span class="string">root</span></span><br><span class="line"><span class="meta">hibernate.connection.password</span>=<span class="string">123456</span></span><br></pre></td></tr></table></figure>
+<h2 id="2-访问测试：">2. 访问测试：</h2>
+<h3 id="节点端口访问：">节点端口访问：</h3>
+<p><a target="_blank" rel="noopener" href="http://192.168.3.124:18080/test/index">http://192.168.3.124:18080/test/index</a></p>
+<h2 id="域名访问：">域名访问：</h2>
+<p>先本机配个hosts</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">192.168.3.124 test.maven.war.com</span><br></pre></td></tr></table></figure>
+<p>再浏览器输入url测试：<br>
+<a target="_blank" rel="noopener" href="http://test.maven.war.com/test/index">http://test.maven.war.com/test/index</a></p>
+<h2 id="3-配置jvm参数：">3. 配置jvm参数：</h2>
+<p>如：设置 <code>JAVA_OPTS</code> 为 <code>-Xmx512M -Xms512M -XX:MetaspaceSize=64m -XX:MaxMetaspaceSize=128m</code></p>
+<h3 id="远程调试">远程调试</h3>
+<p>如果要远程调试，则把 <code>JAVA_OPTS</code> 修改为<br>
+<code>-Xmx512M -Xms512M -XX:MetaspaceSize=64m -XX:MaxMetaspaceSize=128m -agentlib:jdwp=transport=dt_socket,address=9080,server=y,suspend=n</code><br>
+再将9080远程调试端口映射到节点端口</p>
+<h4 id="eclise启动远程调试">eclise启动远程调试</h4>
+<p><img src="image/20200526_134645_66.png" alt="20200526_134645_66"></p>
+ -->
+</article>
+
+<div id="paginator">
+  
+</div>
+
+          <div class="book-post">
+  <h1>SVN下载MAVEN项目代码并打包部署</h1>
+<h2 id="1-创建Maven打包并构建镜像部署K8S任务">1. 创建Maven打包并构建镜像部署K8S任务</h2>
+<p><img src="image/20200526_113209_24.png" alt="20200526_113209_24"></p>
+<h3 id="配置任务参数">配置任务参数</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">svn： https://192.168.0.29:8443/svn/200103/trunk/05.Code/cok/cok-war</span><br><span class="line">dockerfile： Dockerfile</span><br><span class="line">监控检查端口： 8080</span><br><span class="line">文件挂载： /usr/local/tomcat/webapps/ROOT/WEB-INF/classes/prop/jdbc.properties maven-war-jdbc.properties</span><br><span class="line">JAVA_OPTS: -Xmx512M -Xms512M -XX:MetaspaceSize=64m -XX:MaxMetaspaceSize=128m -agentlib:jdwp=transport=dt_socket,address=9080,server=y,suspend=n</span><br><span class="line">服务1： 8080 8080 18080 test.maven.war.com</span><br><span class="line">服务2： 9080 9080 18090</span><br></pre></td></tr></table></figure>
+<p><img src="image/20200526_115027_41.png" alt="20200526_115027_41"><br>
+<img src="image/20200527_180137_85.png" alt="20200527_180137_85"></p>
+<ul>
+<li>其中<code>maven-war-jdbc.properties</code>的内容：</li>
+</ul>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#mysql</span></span><br><span class="line"><span class="meta">hibernate.dialect</span>=<span class="string">org.hibernate.dialect.MySQLDialect</span></span><br><span class="line"><span class="meta">hibernate.connection.url</span>=<span class="string">jdbc:mysql://mysql:3306/mysql?characterEncoding=utf8&amp;useSSL=false&amp;allowMultiQueries=true</span></span><br><span class="line"><span class="meta">hibernate.connection.driver_class</span>=<span class="string">com.mysql.jdbc.Driver</span></span><br><span class="line"><span class="meta">hibernate.connection.username</span>=<span class="string">root</span></span><br><span class="line"><span class="meta">hibernate.connection.password</span>=<span class="string">123456</span></span><br></pre></td></tr></table></figure>
+<h2 id="2-访问测试：">2. 访问测试：</h2>
+<h3 id="节点端口访问：">节点端口访问：</h3>
+<p><a target="_blank" rel="noopener" href="http://192.168.3.124:18080/test/index">http://192.168.3.124:18080/test/index</a></p>
+<h2 id="域名访问：">域名访问：</h2>
+<p>先本机配个hosts</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">192.168.3.124 test.maven.war.com</span><br></pre></td></tr></table></figure>
+<p>再浏览器输入url测试：<br>
+<a target="_blank" rel="noopener" href="http://test.maven.war.com/test/index">http://test.maven.war.com/test/index</a></p>
+<h2 id="3-配置jvm参数：">3. 配置jvm参数：</h2>
+<p>如：设置 <code>JAVA_OPTS</code> 为 <code>-Xmx512M -Xms512M -XX:MetaspaceSize=64m -XX:MaxMetaspaceSize=128m</code></p>
+<h3 id="远程调试">远程调试</h3>
+<p>如果要远程调试，则把 <code>JAVA_OPTS</code> 修改为<br>
+<code>-Xmx512M -Xms512M -XX:MetaspaceSize=64m -XX:MaxMetaspaceSize=128m -agentlib:jdwp=transport=dt_socket,address=9080,server=y,suspend=n</code><br>
+再将9080远程调试端口映射到节点端口</p>
+<h4 id="eclise启动远程调试">eclise启动远程调试</h4>
+<p><img src="image/20200526_134645_66.png" alt="20200526_134645_66"></p>
+
+</div>
+
+
+  <div class="book-comments">
+    <!-- 添加捐赠图标 -->
+
+<!-- 添加捐赠图标 -->
+    
+
+
+
+
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <div id="gitalk-container"></div>
+    <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: 'e25f2031c76f1ce6f918',
+          clientSecret: '0a0b5004ad8f264bb4c22a86fdfc908008b71547',
+          repo: 'blog-comments',
+          owner: 'jetluo',
+          admin: ['jetluo'],
+          id: location.pathname,
+          distractionFreeMode: 'false'
+        })
+        gitalk.render('gitalk-container')
+    </script>
+
+   
+  </div>
+
+
+
+  <span id="busuanzi_container_page_pv">
+    本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+ </span>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<script src="/js/book-post.js"></script>
+
+
+        </div>
+        
+      </div>
+      <div class="column col-2 hide-lg">
+        <div class="book-post-info">
+  
+    <div class="book-post-meta">
+
+  <div class="author">
+
+    <!-- Author image -->
+    <div class="author-img">
+      
+        <figure
+          class="avatar avatar-lg"
+          data-initial="J"
+          style="background-color: #3b4351;">
+        </figure>
+      
+    </div>
+
+    <!-- Author title -->
+    <div class="author-title">
+      <div>Jet</div>
+      <div>2021-07-19</div>
+    </div>
+  </div>
+
+  
+
+  <div class="divider"></div>
+</div>
+  
+
+  <div class="book-tocbot">
+</div>
+<div class="book-tocbot-menu">
+  <a class="book-toc-expand" onclick="expand_toc()">Expand all</a>
+  <a onclick="go_top()">Back to top</a>
+  <a onclick="go_bottom()">Go to bottom</a>
+</div>
+
+
+<script src="/js/book-toc.js"></script>
+
+</div>
+      </div>
+    </div>
+  </div>
+  
+  <a class="off-canvas-overlay" onclick="hide_canvas()"></a>
+</div>
+
+</body>
+</html>
+
+
+<script src="/js/book.js"></script>
