@@ -65,6 +65,14 @@ document.addEventListener('DOMContentLoaded', function () {
 <li><a href="/cok-book/README">容器上云</a></li>
 </ul>
 <h2 id="微服务技术专辑">微服务技术专辑</h2>
+<ul>
+<li><a href="/Spring/README">Spring</a></li>
+<li></li>
+</ul>
+<h2 id="数据库">数据库</h2>
+<ul>
+<li><a href="/db/README">mysql</a></li>
+</ul>
 <h2 id="杂记">杂记</h2>
 
 </div>
@@ -122,37 +130,78 @@ function sidebar_toggle() {
 
         </div>
         <div class="book-content">
-          <div class='book-archive'>
-  <!-- Title -->
-  
-    <h1>Archives</h1>
-  
-
-  
-    <!-- Split post by year -->
-    
-  
-
-  
-      <div class="years">
-          <h2>2021</h2>
-          <ul class="archive-list-item">
           
-              <li>
-                <span>2021-07-19</span>
-                <a href="/2021/07/19/20210719blog/">
-                  20210719blog
-                </a>
-              </li>
-          
-          </ul>
-      </div>
-  
+<article id="page">
+  <h1></h1>
+  <!-- <h1>查询效率慢的原因</h1>
+<ol>
+<li>没有加索引或者索引失效<br>
+where条件使用如下语句会索引失效：null、！=、&lt;&gt;、or连接、in（非要使用，可用关键字exist替代）和not in、‘%abc%’；<br>
+使用参数：num=@num、表达式操作：where num/2=100、函数操作：where substring（name，1,3）=‘abc’-name；</li>
+<li>查询的数据量过大，返回不必要的行和列<br>
+只查询有用的字段，不要用*查询出所有字段。<br>
+采用多线程多次查询。如果查询条件是某段时间之类的范围条件，可以把时间条件切分，多次查询结果合并。</li>
+<li>锁或者死锁</li>
+<li>I/O吞吐量小，形成瓶颈效应。</li>
+<li>内存不足。<br>
+少造对象，对象只在需要使用时创建，不要在整个上下文传递。<br>
+及时清理jvm内存。</li>
+<li>网络速度慢。</li>
+</ol>
+<h1>一些SQL优化方法</h1>
+<pre><code>1：如果索引是复合索引，必须使用该索引的第一个字段作为条件才能保证系统使用该索引，否则索引不会被引用，并且应尽可能的让字段顺序与索引顺序一致。
 
+2：索引并不是越多越好，一个表索引最好不要超过6个。索引固然可以提高select效率，但是也降低了insert效率和update效率，因为insert和update会使索引重建，所以怎么建索引需要慎重考虑。
+
+3：建表的一些优化：
+
+尽量使用数字型字段，若数据只含有数值信息尽量不要设计成字符型，这会降低查询和连接的性能，并会增加存储开销。因为引擎在处理查询和连接时会逐个比较字符串中每个字符，而对于数字型而言只需比较一次就够了。
+尽量使用varchar/nvarchar代替char/nchar，因为首先变长字段存储空间小，可以节省存储空间，其次对于查询来说，在一个相对较小的字段内搜索效率显然要高一些。
+4：任何地方都不要使用select * from table，用具体的字段列表代替*，不要返回用不到的任何字段。
+
+5：并不是所有索引对查询都有效，SQL是根据表中数据来进行查询优化的，当索引列有大量数据重复时，SQL查询可能不会去利用索引，如一表中有字段 sex，male、female几乎各一半，那么即使在sex上建了索引也对查询效率起不了作用。
+
+6：尽量避免大事务操作，提高系统并发能力。
+</code></pre>
+ -->
+</article>
+
+<div id="paginator">
   
 </div>
+
           <div class="book-post">
-  
+  <h1>查询效率慢的原因</h1>
+<ol>
+<li>没有加索引或者索引失效<br>
+where条件使用如下语句会索引失效：null、！=、&lt;&gt;、or连接、in（非要使用，可用关键字exist替代）和not in、‘%abc%’；<br>
+使用参数：num=@num、表达式操作：where num/2=100、函数操作：where substring（name，1,3）=‘abc’-name；</li>
+<li>查询的数据量过大，返回不必要的行和列<br>
+只查询有用的字段，不要用*查询出所有字段。<br>
+采用多线程多次查询。如果查询条件是某段时间之类的范围条件，可以把时间条件切分，多次查询结果合并。</li>
+<li>锁或者死锁</li>
+<li>I/O吞吐量小，形成瓶颈效应。</li>
+<li>内存不足。<br>
+少造对象，对象只在需要使用时创建，不要在整个上下文传递。<br>
+及时清理jvm内存。</li>
+<li>网络速度慢。</li>
+</ol>
+<h1>一些SQL优化方法</h1>
+<pre><code>1：如果索引是复合索引，必须使用该索引的第一个字段作为条件才能保证系统使用该索引，否则索引不会被引用，并且应尽可能的让字段顺序与索引顺序一致。
+
+2：索引并不是越多越好，一个表索引最好不要超过6个。索引固然可以提高select效率，但是也降低了insert效率和update效率，因为insert和update会使索引重建，所以怎么建索引需要慎重考虑。
+
+3：建表的一些优化：
+
+尽量使用数字型字段，若数据只含有数值信息尽量不要设计成字符型，这会降低查询和连接的性能，并会增加存储开销。因为引擎在处理查询和连接时会逐个比较字符串中每个字符，而对于数字型而言只需比较一次就够了。
+尽量使用varchar/nvarchar代替char/nchar，因为首先变长字段存储空间小，可以节省存储空间，其次对于查询来说，在一个相对较小的字段内搜索效率显然要高一些。
+4：任何地方都不要使用select * from table，用具体的字段列表代替*，不要返回用不到的任何字段。
+
+5：并不是所有索引对查询都有效，SQL是根据表中数据来进行查询优化的，当索引列有大量数据重复时，SQL查询可能不会去利用索引，如一表中有字段 sex，male、female几乎各一半，那么即使在sex上建了索引也对查询效率起不了作用。
+
+6：尽量避免大事务操作，提高系统并发能力。
+</code></pre>
+
 </div>
 
 
@@ -221,7 +270,7 @@ function sidebar_toggle() {
     <!-- Author title -->
     <div class="author-title">
       <div>Jet</div>
-      <div></div>
+      <div>2021-07-22</div>
     </div>
   </div>
 
