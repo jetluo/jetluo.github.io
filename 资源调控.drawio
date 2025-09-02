@@ -31,6 +31,9 @@
         <mxCell id="FnIHT5pYeZ_xfr5wdZOx-19" value="执行指标编制" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=light-dark(#d65757, #6d5100);" vertex="1" parent="1">
           <mxGeometry x="473" y="281" width="120" height="60" as="geometry" />
         </mxCell>
+        <mxCell id="FnIHT5pYeZ_xfr5wdZOx-22" value="指标参考值" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;position2=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="187" y="219" width="120" height="92" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
