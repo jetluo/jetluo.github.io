@@ -32,7 +32,7 @@
           <mxGeometry x="473" y="281" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="FnIHT5pYeZ_xfr5wdZOx-22" value="指标参考值" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;position2=1;shadow=1;" vertex="1" parent="1">
-          <mxGeometry x="187" y="219" width="120" height="92" as="geometry" />
+          <mxGeometry x="213" y="254" width="94" height="58" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
