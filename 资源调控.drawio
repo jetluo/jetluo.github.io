@@ -7,7 +7,7 @@
         <mxCell id="FnIHT5pYeZ_xfr5wdZOx-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=light-dark(#f60909, #ededed);" edge="1" parent="1" source="FnIHT5pYeZ_xfr5wdZOx-2" target="FnIHT5pYeZ_xfr5wdZOx-14">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="FnIHT5pYeZ_xfr5wdZOx-2" value="方案管理" style="whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=light-dark(#d65757, #6d5100);rounded=1;fontStyle=1;" vertex="1" parent="1">
+        <mxCell id="FnIHT5pYeZ_xfr5wdZOx-2" value="资源调控" style="whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=light-dark(#d65757, #6d5100);rounded=1;fontStyle=1;" vertex="1" parent="1">
           <mxGeometry x="386" y="58" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="FnIHT5pYeZ_xfr5wdZOx-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=light-dark(#e60f0f, #ededed);exitX=0.993;exitY=0.511;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="FnIHT5pYeZ_xfr5wdZOx-14" target="FnIHT5pYeZ_xfr5wdZOx-19">
