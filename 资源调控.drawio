@@ -40,9 +40,6 @@
         <mxCell id="FnIHT5pYeZ_xfr5wdZOx-19" value="执行指标编制" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=light-dark(#d65757, #6d5100);" vertex="1" parent="1">
           <mxGeometry x="583" y="162" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="FnIHT5pYeZ_xfr5wdZOx-22" value="指标参考值" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;position2=1;shadow=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="98" y="125" width="94" height="58" as="geometry" />
-        </mxCell>
         <mxCell id="FnIHT5pYeZ_xfr5wdZOx-24" value="方案管理" style="html=1;whiteSpace=wrap;aspect=fixed;shape=isoRectangle;fillColor=#fff2cc;strokeColor=#FF0000;" vertex="1" parent="1">
           <mxGeometry x="371" y="278" width="150" height="90" as="geometry" />
         </mxCell>
@@ -66,6 +63,12 @@
         </mxCell>
         <mxCell id="FnIHT5pYeZ_xfr5wdZOx-29" value="执行方案编制" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=light-dark(#d65757, #6d5100);" vertex="1" parent="1">
           <mxGeometry x="583" y="292" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="FnIHT5pYeZ_xfr5wdZOx-33" value="本级审核/审批" style="whiteSpace=wrap;html=1;shape=mxgraph.basic.oval_callout;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="597" y="102" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="FnIHT5pYeZ_xfr5wdZOx-36" value="&lt;ul&gt;&lt;li&gt;&lt;p style=&quot;margin: 0pt 0pt 0.0001pt; text-align: justify; font-family: &amp;quot;Times New Roman&amp;quot;; font-size: 10.5pt;&quot; class=&quot;MsoNormal&quot;&gt;&lt;span style=&quot;font-size: 12pt;&quot;&gt;&lt;font face=&quot;宋体&quot;&gt;年度&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p style=&quot;margin: 0pt 0pt 0.0001pt; text-align: justify; font-family: &amp;quot;Times New Roman&amp;quot;; font-size: 10.5pt;&quot; class=&quot;MsoNormal&quot;&gt;&lt;span style=&quot;font-size: 12pt;&quot;&gt;&lt;font face=&quot;宋体&quot;&gt;迎峰度夏&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p style=&quot;margin: 0pt 0pt 0.0001pt; text-align: justify; font-family: &amp;quot;Times New Roman&amp;quot;; font-size: 10.5pt;&quot; class=&quot;MsoNormal&quot;&gt;&lt;span style=&quot;font-size: 12pt;&quot;&gt;&lt;font face=&quot;宋体&quot;&gt;迎峰度冬&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p style=&quot;margin: 0pt 0pt 0.0001pt; text-align: justify; font-family: &amp;quot;Times New Roman&amp;quot;; font-size: 10.5pt;&quot; class=&quot;MsoNormal&quot;&gt;&lt;span style=&quot;font-size: 12pt;&quot;&gt;&lt;font face=&quot;宋体&quot;&gt;其他&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;" style="text;strokeColor=none;fillColor=none;html=1;whiteSpace=wrap;verticalAlign=middle;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="81" y="122" width="143" height="108" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
