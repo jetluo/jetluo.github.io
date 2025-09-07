@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36" version="28.1.2">
   <diagram name="第 1 页" id="uxVhiXiy4YMAhK3iKIYt">
-    <mxGraphModel dx="946" dy="541" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2600" dy="541" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -31,10 +31,16 @@
         <mxCell id="FnIHT5pYeZ_xfr5wdZOx-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#f8cecc;strokeColor=#b85450;" edge="1" parent="1" source="FnIHT5pYeZ_xfr5wdZOx-18" target="FnIHT5pYeZ_xfr5wdZOx-28">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
+        <mxCell id="FnIHT5pYeZ_xfr5wdZOx-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="FnIHT5pYeZ_xfr5wdZOx-18" target="FnIHT5pYeZ_xfr5wdZOx-36">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="FnIHT5pYeZ_xfr5wdZOx-18" value="年度指标编制" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=light-dark(#d65757, #6d5100);" vertex="1" parent="1">
           <mxGeometry x="195" y="164" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="FnIHT5pYeZ_xfr5wdZOx-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#f8cecc;strokeColor=#b85450;" edge="1" parent="1" source="FnIHT5pYeZ_xfr5wdZOx-19" target="FnIHT5pYeZ_xfr5wdZOx-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="FnIHT5pYeZ_xfr5wdZOx-47" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="FnIHT5pYeZ_xfr5wdZOx-19" target="FnIHT5pYeZ_xfr5wdZOx-42">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="FnIHT5pYeZ_xfr5wdZOx-19" value="执行指标编制" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=light-dark(#d65757, #6d5100);" vertex="1" parent="1">
@@ -58,6 +64,9 @@
             <mxPoint x="369" y="327" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
+        <mxCell id="FnIHT5pYeZ_xfr5wdZOx-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="FnIHT5pYeZ_xfr5wdZOx-28" target="FnIHT5pYeZ_xfr5wdZOx-41">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="FnIHT5pYeZ_xfr5wdZOx-28" value="年度方案编制" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=light-dark(#d65757, #6d5100);" vertex="1" parent="1">
           <mxGeometry x="195" y="294" width="120" height="60" as="geometry" />
         </mxCell>
@@ -67,8 +76,14 @@
         <mxCell id="FnIHT5pYeZ_xfr5wdZOx-33" value="本级审核/审批" style="whiteSpace=wrap;html=1;shape=mxgraph.basic.oval_callout;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
           <mxGeometry x="597" y="102" width="100" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="FnIHT5pYeZ_xfr5wdZOx-36" value="&lt;ul&gt;&lt;li&gt;&lt;p style=&quot;margin: 0pt 0pt 0.0001pt; text-align: justify; font-family: &amp;quot;Times New Roman&amp;quot;; font-size: 10.5pt;&quot; class=&quot;MsoNormal&quot;&gt;&lt;span style=&quot;font-size: 12pt;&quot;&gt;&lt;font face=&quot;宋体&quot;&gt;年度&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p style=&quot;margin: 0pt 0pt 0.0001pt; text-align: justify; font-family: &amp;quot;Times New Roman&amp;quot;; font-size: 10.5pt;&quot; class=&quot;MsoNormal&quot;&gt;&lt;span style=&quot;font-size: 12pt;&quot;&gt;&lt;font face=&quot;宋体&quot;&gt;迎峰度夏&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p style=&quot;margin: 0pt 0pt 0.0001pt; text-align: justify; font-family: &amp;quot;Times New Roman&amp;quot;; font-size: 10.5pt;&quot; class=&quot;MsoNormal&quot;&gt;&lt;span style=&quot;font-size: 12pt;&quot;&gt;&lt;font face=&quot;宋体&quot;&gt;迎峰度冬&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p style=&quot;margin: 0pt 0pt 0.0001pt; text-align: justify; font-family: &amp;quot;Times New Roman&amp;quot;; font-size: 10.5pt;&quot; class=&quot;MsoNormal&quot;&gt;&lt;span style=&quot;font-size: 12pt;&quot;&gt;&lt;font face=&quot;宋体&quot;&gt;其他&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;" style="text;strokeColor=none;fillColor=none;html=1;whiteSpace=wrap;verticalAlign=middle;overflow=hidden;" vertex="1" parent="1">
-          <mxGeometry x="81" y="122" width="143" height="108" as="geometry" />
+        <mxCell id="FnIHT5pYeZ_xfr5wdZOx-36" value="&lt;ul&gt;&lt;li&gt;&lt;p style=&quot;margin: 0pt 0pt 0.0001pt; text-align: justify; font-family: &amp;quot;Times New Roman&amp;quot;; font-size: 10.5pt;&quot; class=&quot;MsoNormal&quot;&gt;&lt;span style=&quot;font-size: 12pt;&quot;&gt;&lt;font style=&quot;color: rgb(255, 0, 0);&quot; face=&quot;宋体&quot;&gt;错峰检修&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p style=&quot;margin: 0pt 0pt 0.0001pt; text-align: justify; font-family: &amp;quot;Times New Roman&amp;quot;; font-size: 10.5pt;&quot; class=&quot;MsoNormal&quot;&gt;&lt;span style=&quot;font-size: 12pt;&quot;&gt;&lt;font style=&quot;color: rgb(255, 0, 0);&quot; face=&quot;宋体&quot;&gt;空调负荷调&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p style=&quot;margin: 0pt 0pt 0.0001pt; text-align: justify; font-family: &amp;quot;Times New Roman&amp;quot;; font-size: 10.5pt;&quot; class=&quot;MsoNormal&quot;&gt;&lt;span style=&quot;font-size: 12pt;&quot;&gt;&lt;font style=&quot;color: rgb(255, 0, 0);&quot; face=&quot;宋体&quot;&gt;有序用电&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;" style="text;strokeColor=none;fillColor=none;html=1;whiteSpace=wrap;verticalAlign=middle;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="21" y="150" width="129" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="FnIHT5pYeZ_xfr5wdZOx-41" value="&lt;ul&gt;&lt;li&gt;&lt;p style=&quot;margin: 0pt 0pt 0.0001pt; text-align: justify; font-family: &amp;quot;Times New Roman&amp;quot;; font-size: 10.5pt;&quot; class=&quot;MsoNormal&quot;&gt;&lt;span style=&quot;font-size: 12pt;&quot;&gt;&lt;font style=&quot;color: rgb(255, 0, 0);&quot; face=&quot;宋体&quot;&gt;错峰检修&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p style=&quot;margin: 0pt 0pt 0.0001pt; text-align: justify; font-family: &amp;quot;Times New Roman&amp;quot;; font-size: 10.5pt;&quot; class=&quot;MsoNormal&quot;&gt;&lt;span style=&quot;font-size: 12pt;&quot;&gt;&lt;font style=&quot;color: rgb(255, 0, 0);&quot; face=&quot;宋体&quot;&gt;空调负荷调&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p style=&quot;margin: 0pt 0pt 0.0001pt; text-align: justify; font-family: &amp;quot;Times New Roman&amp;quot;; font-size: 10.5pt;&quot; class=&quot;MsoNormal&quot;&gt;&lt;span style=&quot;font-size: 12pt;&quot;&gt;&lt;font style=&quot;color: rgb(255, 0, 0);&quot; face=&quot;宋体&quot;&gt;有序用电（按照用户分成群组进行调控）&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p style=&quot;margin: 0pt 0pt 0.0001pt; text-align: justify; font-family: &amp;quot;Times New Roman&amp;quot;; font-size: 10.5pt;&quot; class=&quot;MsoNormal&quot;&gt;&lt;span style=&quot;font-size: 12pt;&quot;&gt;&lt;font style=&quot;color: rgb(0, 153, 0);&quot; face=&quot;宋体&quot;&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0pt 0pt 0.0001pt; text-align: justify; font-family: &amp;quot;Times New Roman&amp;quot;; font-size: 10.5pt;&quot; class=&quot;MsoNormal&quot;&gt;&lt;span style=&quot;font-size: 10.5pt;&quot;&gt;&lt;font style=&quot;color: rgb(0, 153, 0);&quot; face=&quot;宋体&quot;&gt;低压分布式光伏&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;" style="text;strokeColor=none;fillColor=none;html=1;whiteSpace=wrap;verticalAlign=middle;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="-24" y="254.5" width="191" height="139" as="geometry" />
+        </mxCell>
+        <mxCell id="FnIHT5pYeZ_xfr5wdZOx-42" value="&lt;ul&gt;&lt;li&gt;&lt;p style=&quot;margin: 0pt 0pt 0.0001pt; text-align: justify; font-family: &amp;quot;Times New Roman&amp;quot;; font-size: 10.5pt;&quot; class=&quot;MsoNormal&quot;&gt;&lt;span style=&quot;font-size: 12pt;&quot;&gt;&lt;font style=&quot;color: rgb(255, 0, 0);&quot; face=&quot;宋体&quot;&gt;错峰检修&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p style=&quot;margin: 0pt 0pt 0.0001pt; text-align: justify; font-family: &amp;quot;Times New Roman&amp;quot;; font-size: 10.5pt;&quot; class=&quot;MsoNormal&quot;&gt;&lt;span style=&quot;font-size: 12pt;&quot;&gt;&lt;font style=&quot;color: rgb(255, 0, 0);&quot; face=&quot;宋体&quot;&gt;空调负荷调&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p style=&quot;margin: 0pt 0pt 0.0001pt; text-align: justify; font-family: &amp;quot;Times New Roman&amp;quot;; font-size: 10.5pt;&quot; class=&quot;MsoNormal&quot;&gt;&lt;span style=&quot;font-size: 12pt;&quot;&gt;&lt;font style=&quot;color: rgb(255, 0, 0);&quot; face=&quot;宋体&quot;&gt;有序用电&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;" style="text;strokeColor=none;fillColor=none;html=1;whiteSpace=wrap;verticalAlign=middle;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="731" y="148" width="129" height="88" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
